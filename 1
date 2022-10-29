@@ -1,0 +1,31 @@
+// linked list
+using System;
+
+class Program
+{ 
+    class Block
+    {
+        public int data;
+        public Block next; //kendi kendine point eden bir yapı
+        
+
+    }
+    static void Main(string[] args)
+    {
+        //linked list bağlı listeler
+        Block bl = new Block(); //bu classtan bl nesnesini türettik.bl içinde adres tutar. obje olarak bildiğimiz bl bir pointer'dır
+        bl.data = 5;
+        Block bl2= new Block();
+        bl2.data = 55;
+        bl.next = bl2;
+        bl2.data = 87; //bl2 nin datası değişirse hem bl2 nin datası hem de bl.next in datası değişir çnükü ikisi de aynı yeri point eder
+      
+        Console.WriteLine(bl.data);
+        bl.next = bl2;
+        Console.WriteLine(bl.next.data);
+        bl.next.data = 87; //oluşturmadığımız Block için bu kodu kullanmayız öncelikle ram de yaratmamız lazım
+       
+        Console.WriteLine(bl2.data); ;
+       
+    }
+}
