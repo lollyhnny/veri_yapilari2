@@ -1,0 +1,47 @@
+//aynı örneğin 9 8 7 6...0 hali
+
+using System;
+
+class Program
+{ 
+    class Block
+    {
+        public int data;
+        public Block next; //kendi kendine point eden bir yapı
+        
+
+    }
+    static void Main(string[] args)
+    { // 10 elemanlı bir block oluşturun ve bunun başı da head olsun.
+        
+        
+     
+        Block head= null;
+        Block last = null;
+        Block tmp= null;
+
+        for (int i = 0; i <10; i++)
+        {
+
+            tmp = new Block();
+            tmp.data = i;
+            tmp.next = last;
+
+            
+            last = tmp;
+
+        }
+        head = last;
+        Block bl = head;
+        while (bl != null)
+        {
+            
+            Console.WriteLine(bl.data);
+            bl = bl.next;
+
+        }
+        
+        
+       
+    }
+}
