@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    class Block
+    {
+        public int data;
+        public Block next; //kendi kendine point eden bir yapı
+
+
+    }
+    static void Main(string[] args)
+    { // head tekli linked listin en baştaki elemanına bakmaktadır 
+        //bu listenin içindeki datalardan çift olanların sayısını bulunuz
+        Block head = null;
+        Block last = null;
+
+        for (int i = 0; i < 10; i++)
+        {
+            Block tmp = new Block();
+            tmp.data = i;
+            tmp.next = null;
+            if (head == null)
+                head = tmp;
+
+            else
+                last.next = tmp;
+
+            last = tmp;
+
+
+
+        }
+        Block bl = head;
+        int cift = 0;
+
+        while (bl != null)
+        {
+            if (bl.data % 2 == 0) cift++;
+ 
+            bl = bl.next;
+        }
+    }
+}
