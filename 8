@@ -53,7 +53,7 @@ class Program
         //ilk elmanı silme işlemi yapmak için head=head.next; kullanmalıyız fakat pointer ile silinen bloğa erişimi engellemek ve güvenlik için
         //şu şekilde bir silme yapabilriz:
         tmp=head;
-        head= head.next;
+        head= head.next; // burada aslında listenin head yerine head.next yani sonraki elemandan başladığını düşünebiliriz.
         tmp.next=null;
 
     }   
