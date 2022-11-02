@@ -1,0 +1,61 @@
+Listenin ilk elemanını siliniz
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    class Block
+    {
+        public int data;
+        public Block next; //kendi kendine point eden bir yapı
+
+
+    }
+    static void Main(string[] args)
+    { 
+        Block head = null;
+        Block last = null;
+        Block tmp= null;
+
+        for (int i = 0; i < 10; i++)
+        {
+            tmp = new Block();
+            tmp.data = i;
+            tmp.next = last;
+            
+            last = tmp;
+
+
+
+        }
+        head = last;
+        Block t1 = new Block();
+        t1.data = 555;
+        t1.next = head;
+        head = t1;
+        Block bl = head;
+        
+
+        while (bl.next != null)
+        {
+
+ 
+            bl = bl.next;
+        }
+        Console.WriteLine(bl.data);
+        t1 = new Block();
+        t1.data = 5555;
+        t1.next = null;
+        bl.next = t1; //en son bloğu oluştur en son elemanın  nextini yeni bloğa point ettir
+        Console.WriteLine(bl.next.data);
+        
+        //ilk elmanı silme işlemi yapmak için head=head.next; kullanmalıyız fakat pointer ile silinen bloğa erişimi engellemek ve güvenlik için
+        //şu şekilde bir silme yapabilriz:
+        tmp=head;
+        head= head.next;
+        tmp.next=null;
+
+    }   
+
+}
