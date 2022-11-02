@@ -44,7 +44,11 @@ class Program
             bl = bl.next;
         }
         Console.WriteLine(bl.data); //bl.next 0 olunca durur son elemanı yani 0 ı yazdırır.
-
+        t1 = new Block();
+        t1.data = 5555;
+        t1.next = null;
+        bl.next = t1; //en son bloğu oluştur en son elemanın  nextini yeni bloğa point ettir
+        Console.WriteLine(bl.next.data);
     }   
 
 }
