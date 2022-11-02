@@ -1,0 +1,47 @@
+// head tekli linked listin ilk elemanına bakmaktadır. Listenin başına yeni bir block ekleyiniz
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    class Block
+    {
+        public int data;
+        public Block next; //kendi kendine point eden bir yapı
+
+
+    }
+    static void Main(string[] args)
+    { 
+        Block head = null;
+        Block last = null;
+        Block tmp= null;
+
+        for (int i = 0; i < 10; i++)
+        {
+            tmp = new Block();
+            tmp.data = i;
+            tmp.next = last;
+            
+            last = tmp;
+
+
+
+        }
+        head = last;
+        Block t1 = new Block(); //yeni block tanımlıyoruz 
+        t1.data = 555;
+        t1.next = head; 
+        head = t1;   //head i t1e eşitlediğimizde listenin ilk elemanı t1 oluyor
+        Block bl = head;
+        
+
+        while (bl != null)
+        {
+            Console.WriteLine(bl.data);
+ 
+            bl = bl.next;
+        }
+    }
+}
